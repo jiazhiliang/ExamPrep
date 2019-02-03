@@ -5,34 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Caching;
 using System.Collections.ObjectModel;
+using System.Transactions;
+using System.Data.SqlClient;
+using System.Data.Entity.Core.EntityClient;
 
 namespace E70487
 {
-
-    public class MyMonitor : CacheEntryChangeMonitor
-    {
-        public override ReadOnlyCollection<string> CacheKeys => throw new NotImplementedException();
-
-        public override DateTimeOffset LastModified => throw new NotImplementedException();
-
-        public override string RegionName => throw new NotImplementedException();
-
-        public override string UniqueId => throw new NotImplementedException();
-
-        protected override void Dispose(bool disposing)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-            var cache = MemoryCache.Default;
-
-
-
+            var conn = new EntityConnection();
+            var trans = conn.CurrentTransaction;
         }
     }
 }
